@@ -1,0 +1,13 @@
+.user-card {
+  margin: 0 auto;
+  margin-top: 200px;
+  width: 50vw;
+  text-align: left;
+  background-color: aqua;
+  padding: 40px;
+  padding-top: 0;
+}
+
+.counter {
+  text-align: right;
+}
