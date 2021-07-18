@@ -4,6 +4,7 @@ import { useState } from 'react';
 import data from './data';
 import NewUser from './Components/NewUser';
 import EditUser from './Components/EditUser';
+import Navigator from './Components/Navigation';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(0)
@@ -45,16 +46,14 @@ function App() {
     setUserData(changedArr)
   }
 
- 
-
-
-  
   return (
     <div className="App-main">
-      <User currentUser={currentUser} btnNextHandler={btnNextHandler} 
+      <User currentUser={currentUser} userData={userData} />
+      <Navigator  btnNextHandler={btnNextHandler} 
       btnBackHandler={btnBacktHandler} 
       userData={userData} deleteHandler={deleteHandler}/>
       <NewUser userData={userData} currentUser={currentUser} addHandler={addHandler}/>
+      <br/>
       <EditUser userData={userData} currentUser={currentUser} editHandler = {editHandler}/>
     </div>
   );

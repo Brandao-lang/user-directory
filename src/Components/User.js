@@ -29,10 +29,6 @@ export default function User (props) {
                     </li>
                 </ol>
             </div>
-            <button onClick={props.btnBackHandler}>Back</button> 
-            <button onClick={props.btnNextHandler}>Next</button> 
-            <button onClick={props.deleteHandler}>Delete</button> 
-            
         </div> 
     )
 }
