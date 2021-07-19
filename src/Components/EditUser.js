@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useFormik } from 'formik'
+import Modal from 'react-modal'
 
 export default function EditUser(props) {
+    const [modalIsOpen, setModalIsOpen] = useState(false)
     const formik = useFormik({
         enableReinitialize: true,
         initialValues: {
@@ -29,10 +31,26 @@ export default function EditUser(props) {
       }
             props.editHandler(update)
         },
-        
-    })
+    }
+)
 
     return (
+        <div className="form">
+        <button onClick={() => setModalIsOpen(true)}>Edit</button>
+    <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)}
+           style={
+               {
+                 overlay: {
+                     textAlign: 'center',
+                 },
+                 content: {
+                     width: '20vw',
+                     height: '30vh',
+                     margin: '0 auto'
+                 }
+             }
+           }
+         >
         <form onSubmit={formik.handleSubmit}>
         <label htmlFor="firstName">First Name </label>
         <input
@@ -115,6 +133,9 @@ export default function EditUser(props) {
     <br/>
         <button type="submit">Save Changes</button>
   </form>
+  <button onClick={() => setModalIsOpen(false)}>Close</button>
+        </Modal> 
+        </div>
   
     )
 

@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useFormik } from 'formik'
+import Modal from 'react-modal'
 
+
+Modal.setAppElement('#root')
 export default function NewUser (props) {
+    const [modalIsOpen, setModalIsOpen] = useState(false)
     const formik = useFormik({
         initialValues: {
             firstName: '',
@@ -27,10 +31,7 @@ export default function NewUser (props) {
     ]
   }
             props.addHandler(user)
-            console.log(props.userData)
             resetForm({ vlaues: ''})
-            
-            
         },
         validate: values => {
             let errors = {}
@@ -47,10 +48,23 @@ export default function NewUser (props) {
         }
     })
 
-    let test = formik.values.firstName
-    
-    
-    return (
+  return (
+       <div className="form">
+           <button onClick={() => setModalIsOpen(true)}>New</button>
+       <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)}
+              style={
+                  {
+                    overlay: {
+                        textAlign: 'center',
+                    },
+                    content: {
+                        width: '20vw',
+                        height: '30vh',
+                        margin: '0 auto'
+                    }
+                }
+              }
+            >
         <form onSubmit={formik.handleSubmit}>
             <label htmlFor="firstName">First Name </label>
             <input
@@ -134,7 +148,9 @@ export default function NewUser (props) {
         <br/>
         <br/>
             <button type="submit">Add User</button>
-      </form>
-      
-    )
-}
+        </form>
+        <button onClick={() => setModalIsOpen(false)}>Close</button>
+        </Modal> 
+        </div>
+      )
+    }
