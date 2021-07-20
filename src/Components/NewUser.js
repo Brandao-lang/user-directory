@@ -1,11 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useFormik } from 'formik'
 import Modal from 'react-modal'
 
 
 Modal.setAppElement('#root')
 export default function NewUser (props) {
-    const [modalIsOpen, setModalIsOpen] = useState(false)
     const formik = useFormik({
         initialValues: {
             firstName: '',
@@ -50,8 +49,7 @@ export default function NewUser (props) {
 
   return (
        <div className="form">
-           <button onClick={() => setModalIsOpen(true)}>New</button>
-       <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)}
+           <Modal isOpen={props.createIsOpen}
               style={
                   {
                     overlay: {
@@ -149,7 +147,7 @@ export default function NewUser (props) {
         <br/>
             <button type="submit">Add User</button>
         </form>
-        <button onClick={() => setModalIsOpen(false)}>Close</button>
+        <button  onClick={props.createOpener}>Close</button>
         </Modal> 
         </div>
       )

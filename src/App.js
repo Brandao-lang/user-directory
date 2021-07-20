@@ -5,12 +5,12 @@ import data from './data';
 import NewUser from './Components/NewUser';
 import EditUser from './Components/EditUser';
 import Navigator from './Components/Navigation';
-import './Styles/buttons.css'
-
 
 function App() {
   const [currentUser, setCurrentUser] = useState(0)
   const [userData, setUserData] = useState(data)
+  const [createIsOpen, setCreateIsOpen] = useState(false)
+  const [editorIsOpen, setEditorIsOpen] = useState(false)
 
   function btnNextHandler() {
     if (currentUser === userData.length-1) {
@@ -48,15 +48,23 @@ function App() {
     setUserData(changedArr)
   }
 
+  function editOpener () {
+    setEditorIsOpen(!editorIsOpen)
+  }
+  
+  function createOpener () {
+    setCreateIsOpen(!createIsOpen)
+  }
+
 
 
   return (
     <div className="App-main">
       <User currentUser={currentUser} userData={userData} />
       <Navigator  btnNextHandler={btnNextHandler} 
-      btnBackHandler={btnBacktHandler} deleteHandler={deleteHandler}/>
-      <NewUser userData={userData} currentUser={currentUser} addHandler={addHandler}/>
-      <EditUser userData={userData} currentUser={currentUser} editHandler = {editHandler}/>
+      btnBackHandler={btnBacktHandler} deleteHandler={deleteHandler} editOpener={editOpener} createOpener={createOpener}/>
+      <NewUser userData={userData} currentUser={currentUser} addHandler={addHandler} createIsOpen={createIsOpen} createOpener={createOpener}/>
+      <EditUser userData={userData} currentUser={currentUser} editHandler = {editHandler} editorIsOpen={editorIsOpen} editOpener={editOpener}/>
     </div>
   );
 }

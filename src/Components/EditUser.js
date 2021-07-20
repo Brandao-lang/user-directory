@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useFormik } from 'formik'
 import Modal from 'react-modal'
 
 export default function EditUser(props) {
-    const [modalIsOpen, setModalIsOpen] = useState(false)
     const formik = useFormik({
         enableReinitialize: true,
         initialValues: {
@@ -35,9 +34,8 @@ export default function EditUser(props) {
 )
 
     return (
-        <div className="form">
-        <button onClick={() => setModalIsOpen(true)}>Edit</button>
-    <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)}
+    <div className="form">
+        <Modal isOpen={props.editorIsOpen} 
            style={
                {
                  overlay: {
@@ -133,7 +131,7 @@ export default function EditUser(props) {
     <br/>
         <button type="submit">Save Changes</button>
   </form>
-  <button onClick={() => setModalIsOpen(false)}>Close</button>
+  <button onClick={props.editOpener}>Close</button>
         </Modal> 
         </div>
   
