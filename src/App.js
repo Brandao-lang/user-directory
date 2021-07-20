@@ -56,8 +56,6 @@ function App() {
     setCreateIsOpen(!createIsOpen)
   }
 
-
-
   return (
     <div className="App-main">
       <User currentUser={currentUser} userData={userData} />

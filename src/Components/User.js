@@ -8,6 +8,7 @@ export default function User (props) {
            <h1 className="counter">{props.currentUser+1}/{props.userData.length}</h1>
             <div className="user-bio">
                 <h1>{props.userData[props.currentUser].name.first} {props.userData[props.currentUser].name.last}</h1>
+                <hr/>
                 <span><strong>From: </strong>{props.userData[props.currentUser].city}</span>
                  <br/>
                 <span><strong>Job Title: </strong>{props.userData[props.currentUser].title}</span>

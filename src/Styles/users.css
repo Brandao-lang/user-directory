@@ -1,13 +1,19 @@
 .user-card {
   margin: 0 auto;
-  margin-top: 200px;
+  margin-top: 150px;
   width: 50vw;
   text-align: left;
-  background-color: aqua;
+  background-color: #f5f1ed;
   padding: 40px;
   padding-top: 0;
 }
 
 .counter {
   text-align: right;
+}
+
+hr {
+  width: 30%;
+  margin: 0;
+  margin-bottom: 10px;
 }
