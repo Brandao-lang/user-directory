@@ -27,8 +27,8 @@ export default function NewUser (props) {
             formik.values.movieOne,
             formik.values.movieTwo,
             formik.values.movieThree
-    ]
-  }
+        ]
+    }
             props.addHandler(user)
             resetForm({ vlaues: ''})
         },
@@ -45,7 +45,8 @@ export default function NewUser (props) {
 
             return errors
         }
-    })
+    }
+)
 
   return (
        <div className="form">
@@ -84,7 +85,7 @@ export default function NewUser (props) {
                  value={formik.values.lastName}
             />
         <br/>
-        <label htmlFor="location">Location </label>
+            <label htmlFor="location">Location </label>
                 <input
                  id="location"
                  name="location"
@@ -94,7 +95,7 @@ export default function NewUser (props) {
                  value={formik.values.location}
             />
         <br/>
-        <label htmlFor="occupation">Occupation </label>
+            <label htmlFor="occupation">Occupation </label>
                 <input
                  id="occupation"
                  name="occupation"
@@ -104,7 +105,7 @@ export default function NewUser (props) {
                  value={formik.values.occupation}
             />
         <br/>
-        <label htmlFor="employer">Employer </label>
+            <label htmlFor="employer">Employer </label>
                 <input
                  id="employer"
                  name="employer"
@@ -114,7 +115,7 @@ export default function NewUser (props) {
                  value={formik.values.employer}
             />
         <br/>
-        <label htmlFor="movieOne">Favorite Movie (1) </label>
+            <label htmlFor="movieOne">Favorite Movie (1) </label>
                 <input
                  id="movieOne"
                  name="movieOne"
@@ -124,7 +125,7 @@ export default function NewUser (props) {
                  value={formik.values.movieOne}
             />
         <br/>
-        <label htmlFor="movieTwo">Favorite Movie (2) </label>
+            <label htmlFor="movieTwo">Favorite Movie (2) </label>
                 <input
                  id="movieTwo"
                  name="movieTwo"
@@ -134,7 +135,7 @@ export default function NewUser (props) {
                  value={formik.values.movieTwo}
             />
         <br/>
-        <label htmlFor="movieThree">Favorite Movie (3) </label>
+            <label htmlFor="movieThree">Favorite Movie (3) </label>
                 <input
                  id="movieThree"
                  name="movieThree"
@@ -144,11 +145,11 @@ export default function NewUser (props) {
                  value={formik.values.movieThree}
             />
         <br/>
-        <br/>
+    <br/>
             <button type="submit">Add User</button>
         </form>
         <button  onClick={props.createOpener}>Close</button>
         </Modal> 
-        </div>
-      )
-    }
+    </div>
+    )
+}

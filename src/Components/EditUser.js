@@ -32,109 +32,106 @@ export default function EditUser(props) {
         },
     }
 )
-
-    return (
+return (
     <div className="form">
         <Modal isOpen={props.editorIsOpen} 
-           style={
-               {
-                 overlay: {
-                     textAlign: 'center',
-                 },
-                 content: {
-                     width: '20vw',
-                     height: '30vh',
-                     margin: '0 auto'
-                 }
-             }
-           }
-         >
+            style={
+                {
+                    overlay: {
+                        textAlign: 'center',
+                    },
+                    content: {
+                        width: '20vw',
+                        height: '30vh',
+                        margin: '0 auto'
+                    }
+                }
+            }
+            >
         <form onSubmit={formik.handleSubmit}>
-        <label htmlFor="firstName">First Name </label>
-        <input
-            id="firstName"
-            name="firstName"
-            type="text"
-            onChange={formik.handleChange}
-            value={formik.values.firstName}
-        />
-    <br/>
-        <label htmlFor="lastName">Last Name </label>
+            <label htmlFor="firstName">First Name </label>
             <input
-             id="lastName"
-             name="lastName"
-              type="text"
-              onChange={formik.handleChange}
-             value={formik.values.lastName}
-        />
-    <br/>
-        <label htmlFor="location">Location </label>
-                <input
-                 id="location"
-                 name="location"
-                  type="text"
-                  placeholder="optional"
-                  onChange={formik.handleChange}
-                 value={formik.values.location}
+                id="firstName"
+                name="firstName"
+                type="text"
+                onChange={formik.handleChange}
+                value={formik.values.firstName}
             />
         <br/>
-        <label htmlFor="occupation">Occupation </label>
+            <label htmlFor="lastName">Last Name </label>
                 <input
-                 id="occupation"
-                 name="occupation"
-                  type="text"
-                  placeholder="optional"
-                  onChange={formik.handleChange}
-                 value={formik.values.occupation}
+                id="lastName"
+                name="lastName"
+                type="text"
+                onChange={formik.handleChange}
+                value={formik.values.lastName}
             />
         <br/>
-        <label htmlFor="employer">Employer </label>
-                <input
-                 id="employer"
-                 name="employer"
-                  type="text"
-                  placeholder="optional"
-                  onChange={formik.handleChange}
-                 value={formik.values.employer}
+            <label htmlFor="location">Location </label>
+                    <input
+                    id="location"
+                    name="location"
+                    type="text"
+                    placeholder="optional"
+                    onChange={formik.handleChange}
+                    value={formik.values.location}
             />
         <br/>
-        <label htmlFor="movieOne">Favorite Movie (1) </label>
-                <input
-                 id="movieOne"
-                 name="movieOne"
-                  type="text"
-                  placeholder="optional"
-                  onChange={formik.handleChange}
-                 value={formik.values.movieOne}
+            <label htmlFor="occupation">Occupation </label>
+                    <input
+                    id="occupation"
+                    name="occupation"
+                    type="text"
+                    placeholder="optional"
+                    onChange={formik.handleChange}
+                    value={formik.values.occupation}
             />
         <br/>
-        <label htmlFor="movieTwo">Favorite Movie (2) </label>
-                <input
-                 id="movieTwo"
-                 name="movieTwo"
-                  type="text"
-                  placeholder="optional"
-                  onChange={formik.handleChange}
-                 value={formik.values.movieTwo}
+            <label htmlFor="employer">Employer </label>
+                    <input
+                    id="employer"
+                    name="employer"
+                    type="text"
+                    placeholder="optional"
+                    onChange={formik.handleChange}
+                    value={formik.values.employer}
             />
         <br/>
-        <label htmlFor="movieThree">Favorite Movie (3) </label>
-                <input
-                 id="movieThree"
-                 name="movieThree"
-                  type="text"
-                  placeholder="optional"
-                  onChange={formik.handleChange}
-                 value={formik.values.movieThree}
+            <label htmlFor="movieOne">Favorite Movie (1) </label>
+                    <input
+                    id="movieOne"
+                    name="movieOne"
+                    type="text"
+                    placeholder="optional"
+                    onChange={formik.handleChange}
+                    value={formik.values.movieOne}
             />
         <br/>
-    <br/>
-        <button type="submit">Save Changes</button>
-  </form>
-  <button onClick={props.editOpener}>Close</button>
+            <label htmlFor="movieTwo">Favorite Movie (2) </label>
+                    <input
+                    id="movieTwo"
+                    name="movieTwo"
+                    type="text"
+                    placeholder="optional"
+                    onChange={formik.handleChange}
+                    value={formik.values.movieTwo}
+            />
+        <br/>
+            <label htmlFor="movieThree">Favorite Movie (3) </label>
+                    <input
+                    id="movieThree"
+                    name="movieThree"
+                    type="text"
+                    placeholder="optional"
+                    onChange={formik.handleChange}
+                    value={formik.values.movieThree}
+                />
+            <br/>
+        <br/>
+            <button type="submit">Save Changes</button>
+        </form>
+            <button onClick={props.editOpener}>Close</button>
         </Modal> 
-        </div>
-  
-    )
-
+    </div>
+  )
 }
