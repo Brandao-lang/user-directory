@@ -31,6 +31,7 @@ export default function NewUser (props) {
     }
             props.addHandler(user)
             resetForm({ vlaues: ''})
+            alert('User has been added to the directory')
         },
         validate: values => {
             let errors = {}

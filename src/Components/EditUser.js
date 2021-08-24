@@ -29,6 +29,7 @@ export default function EditUser(props) {
         ]
       }
             props.editHandler(update)
+            alert('Changes have been saved')
         },
     }
 )
